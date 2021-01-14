@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<section class="page-title-area bg-cover1">
+    <div class="page-title-wrapper section-spacing">
+        <div class="page-title text-center white-text">
+            <h2 id="title" class="heading-2">{{ page.title }}</h2>
+            <ul class="page-title-meta list-inline">
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="pupolar-article-area bg-color3">
+    <div class="pupolar-article-wrapper  section-spacing bminus-30">
+        <div id="container" class="container">
+            <div class="section-title">
+                <h2 id="heading" class="heading-2"></h2>
+            </div>
+            <div class="row">
+                <div id="docview" class="col-md-7 col-lg-8">
+                    <article class="bg-color1 wow fadeIn" data-wow-duration="3s">
+                        <div style="width: 100%; position: relative;">
+                            <iframe id="document" width="100%" frameborder="0"
+                                sandbox="allow-scripts allow-same-origin"></iframe>
+                            <div onclick="showFullView();"
+                                style="width: 40px; height: 40px; position: absolute; opacity: 0; right: 12px; top: 12px;">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-5 col-lg-4" id="resources"> </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{site.url}}{{site.baseurl}}/assets/js/resources.js"></script>
+<script>
+    function showFullView() {
+        if (!isFullView) {
+            document.getElementById('docview').className = "col-md-12";
+            document.getElementById('resources').style = "display:none;";
+            document.getElementById('document').scrollIntoView();
+            document.body.style = 'overflow:hidden;';
+            document.getElementById('document').height = window.innerHeight;
+            document.getElementById("container").className = "empty-container";
+            document.getElementsByClassName('home-top')[0].style = "display:none;";
+        }
+        else {
+            document.getElementById('docview').className = "col-md-7 col-lg-8";
+            document.getElementById('resources').style = "";
+            document.body.style = 'overflow:visible;';
+            document.getElementById("container").className = "container";
+            document.getElementsByClassName('home-top')[0].style = "";
+            document.getElementById('document').height = window.innerHeight - 50;
+        }
+        isFullView = !isFullView;
+    }
+
+    function loadDocument(title, doc) {
+        document.getElementById('heading').innerText = title;
+        document.title = title;
+        document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
+    }
+    var isFullView = false;
+    document.getElementById('document').height = window.innerHeight - 50;
+    var search = location.search.substring(1);
+    var queryObject = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+    document.getElementById('title').innerText = queryObject.sub;
+    document.title = queryObject.doc;
+    var subjects;
+    var contents;
+    var docs;
+    var otherResources = "";
+    for (resource in resources) {
+        if (resources[resource].semester == queryObject.sem) {
+            subjects = resources[resource].contents;
+        }
+    }
+    for (subject in subjects) {
+        if (subjects[subject].subject == queryObject.sub) {
+            contents = subjects[subject].resources;
+        }
+    }
+    for (content in contents) {
+        var items = contents[content].items;
+        var itemHtml = "";
+        if (contents[content].title == queryObject.type) {
+            docs = items;
+        }
+        for (item in items) {
+            itemHtml = itemHtml + `<li onClick="loadDocument('${items[item].title}', '${items[item].id}');"><a href="#document">${items[item].title}</a></li>`
+        }
+        otherResources = otherResources + `
+                    <article class="pupolar-item bg-color1 wow fadeIn" data-wow-duration="3s">
+                        <header class="popular-item-top">
+                            <div class="popular-top-title">
+                                <h5 class="heading-5">${contents[content].title}</a></h5>
+                            </div>
+                        </header>
+                        <ul class="popular-item-list list-inline">
+                            ${itemHtml}
+                        </ul>
+                    </article>
+                `;
+    }
+    for (doc in docs) {
+        if (docs[doc].title == queryObject.doc) {
+            loadDocument(docs[doc].title, docs[doc].id);
+        }
+    }
+    document.getElementById('resources').innerHTML = otherResources;
+
+</script>

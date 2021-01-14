@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+{% assign url = page.path | replace: "/subjects","" %}
+
+<section class="page-title-area bg-cover1">
+    <div class="page-title-wrapper section-spacing">
+        <div class="page-title text-center white-text">
+            <h2 class="heading-2">{{ page.title }}</h2>
+            <ul class="page-title-meta list-inline">
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="pupolar-article-area bg-color3">
+    <div class="pupolar-article-wrapper  section-spacing bminus-30">
+        <div class="container">
+            {% include breadcrumbs.html path=url title=page.title %}
+            <div class="section-title">
+                <h2 class="heading-2">{{ page.title }}</h2>
+                <p>{{ content }}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-8">
+                    {% for resource in page.resources %}
+                    <article class="pupolar-article  bg-color1  wow fadeIn" data-wow-duration="3s">
+                        <header class="popular-article-top">
+                            <div class="popular-top-logo">
+                                <div class="popular-logo-icon"><img
+                                        src="{{ site.url }}{{ site.baseurl }}/assets/images/book.png"
+                                        alt="service icon"></div>
+                            </div>
+                            <div class="popular-top-title">
+                                <h5 class="heading-5">{{ resource.title }}</h5>
+                            </div>
+                        </header>
+                        <ul class="popular-article-list list-inline">
+                            {% for item in resource.items %}
+                            {% if item.hidden != true %}
+                            <li>
+                                <a href="{{ site.url }}{{ site.baseurl }}/document?sem={{ page.semester | replace: " Semester" | downcase }}&sub={{ page.title }}&type={{ resource.title }}&doc={{ item.title }}">{{ item.title }} </a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </article>
+                    {% endfor %}
+                    {% include comments.html %}
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <article class="pupolar-item bg-color1 wow fadeIn" data-wow-duration="3s">
+                        <header class="popular-item-top">
+                            <div class="popular-top-logo">
+                                <div class="popular-logo-icon"><img
+                                        src="{{ site.url }}{{ site.baseurl }}/assets/images/notes.png"
+                                        alt="service icon"></div>
+                            </div>
+                            <div class="popular-top-title">
+                                <h5 class="heading-5">Other Subjects</a></h5>
+                            </div>
+                        </header>
+                        <ul class="popular-item-list list-inline">
+                            {% for item in site.pages %}
+                            {% if item.semester == page.semester and item.title != page.title %}
+                            <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">
+                                    {{item.title}}
+                                </a></li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+
+{% assign subjects = "" | split: ", " %}
+{% assign subjectCodes = "" | split: ", " %}
+{% assign resources = "" | split: ", " %}
+{% for page in site.pages %}
+{% if page.semester == 'Seventh Semester' %}
+{% assign eachSubject = page.title | split: ", " %}
+{% assign eachSubjectCode = page.subjectCode| split: ", " %}
+{% assign eachResource = page.resources | jsonify | split: ", " %}
+{% assign subjects = subjects | concat: eachSubject %}
+{% assign subjectCodes = subjectCodes | concat: eachSubjectCode %}
+{% assign resources = resources | concat: eachResource %}
+{% endif %}
+{% endfor %}
+{
+"timestamp":"{{site.time}}",
+"subjects":[
+{% for subject in subjects %}
+{
+"name":"{{ subject }}",
+"subjectCode":"{{ subjectCodes[forloop.index0] }}",
+"resources":{{ resources[forloop.index0] }}
+}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+}

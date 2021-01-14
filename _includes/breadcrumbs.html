@@ -1,0 +1,25 @@
+{% assign categories = page.url | replace:"/subjects","" | split:"/" %}
+{% if categories contains "_posts" or "subjects" %}
+{% assign categories = categories | pop %}
+{% endif %}
+{% assign route="" %}
+
+<nav class="layout-breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
+        {% for category in categories %}
+        {% assign route = route | append: '/' | append: category %}
+        {% if forloop.last %}
+        {% if include.title %}
+        <li class="breadcrumb-item active" aria-current="page">{{ include.title }}</li>
+        {% else %}
+        <li class="breadcrumb-item active" aria-current="page">{{ category }}</li>
+        {% endif %}
+        {% else %}
+        <li class="breadcrumb-item"><a
+                href="{{ include.path | replace: 'subjects/','' | split:'/' | first | absolute_url }}/">{{ page.semester
+                }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</nav>

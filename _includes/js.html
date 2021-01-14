@@ -1,0 +1,11 @@
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/build.min.js"></script>
+<script>
+    $(function () {
+        $('a[href*=\\#]').not(".no-smooth").on('click', function (event) {
+            var el = $(this.hash);
+            if (el.length > 0) {
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top - 100 }, 500);
+            }
+        });
+    });
+</script>
