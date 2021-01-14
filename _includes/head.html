@@ -42,11 +42,16 @@
     <!-- facebook -->
     <meta property="og:locale" content="en_US">
     <meta property="og:title"
-        content="{% if page.title %}{{ page.title }} - Notes, Old Questions & More | CSIT Tutor{% else %}{{ site.title }}: Notes, Old Questions, Solutions and Syllabus{% endif %}">
+        content="{% unless page.customTitle %}{% if page.stripSiteName %}{{ page.title }} - Notes, Old Questions & More{% else %}{{ page.title }} - Notes, Old Questions & More | CSIT Tutor{% endif %}{% else %}{{ page.title }}{% endunless %}">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    {% unless page.customDescription %}
     <meta property="og:description"
-        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        content="Download B.Sc. CSIT {{page.title}} Notes, Old Questions, Old Question Solutions, Syllabus, Microsyllabus, Model Question, Lab Sheets" />
+    {% else %}
+    <meta property="og:description"
+        content="{% if page.description %}{{ page.description | strip_html | truncate: 160 }}{% else %}{{ site.description | strip_html | truncate: 160  }}{% endif %}" />
+    {% endunless %}
     <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:image" content="{{site.url}}{{site.baseurl}}/assets/images/banner.png" />
     <meta property="fb:app_id" content="170214657616998" />
@@ -55,10 +60,15 @@
     <!-- twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title"
-        content="{% if page.title %}{{ page.title }} - Notes, Old Questions & More | CSIT Tutor{% else %}{{ site.title }}: Notes, Old Questions, Solutions and Syllabus{% endif %}">
+        content="{% unless page.customTitle %}{% if page.stripSiteName %}{{ page.title }} - Notes, Old Questions & More{% else %}{{ page.title }} - Notes, Old Questions & More | CSIT Tutor{% endif %}{% else %}{{ page.title }}{% endunless %}">
+    {% unless page.customDescription %}
     <meta name="twitter:description"
-        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:creator" content="{{ site.twitter_username }}">
+        content="Download B.Sc. CSIT {{page.title}} Notes, Old Questions, Old Question Solutions, Syllabus, Microsyllabus, Model Question, Lab Sheets" />
+    {% else %}
+    <meta name="twitter:description"
+        content="{% if page.description %}{{ page.description | strip_html | truncate: 160 }}{% else %}{{ site.description | strip_html | truncate: 160  }}{% endif %}" />
+    {% endunless %}
+    <meta name="twitter:creator" content="@SaradGajurel">
     <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}/assets/images/banner.png">
     <!-- twitter -->
 
