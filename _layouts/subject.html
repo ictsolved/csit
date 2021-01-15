@@ -25,13 +25,15 @@ layout: default
             </div>
             <div id="viewer" style="display: none;">
                 <div class="col-xs-12">
-                    <article class="bg-color1 wow fadeIn">
+                    <article class="bg-color1">
                         <div class="loader" style="width: 100%; position: relative">
                             <iframe id="document" width="100%" frameborder="0"
                                 sandbox="allow-scripts allow-same-origin"></iframe>
-                            <div
-                                style="width: 40px; height: 40px; position: absolute; opacity: 0; right: 12px; top: 12px;">
-                                &nbsp;
+                            <div data-toggle="modal" data-target="#dialog"
+                                style="width: 40px; height: 40px; position: absolute; opacity: 1; background-color: #F44336; right: 12px; top: 12px;">
+                                <p style="font-size: 20px; color: white; padding-left: 2px; padding-top: 6px;"
+                                    class="text-center"><i class="fa fa-download"></i></p>
+                                </button>
                             </div>
                         </div>
                     </article>
@@ -94,26 +96,55 @@ layout: default
     </div>
 </section>
 
+<div class="modal fade" id="dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Download CSIT Tutor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You can download documents in our Mobile Application only. Our mobile application has following
+                features:
+                <ul>
+                    <li> All study materials of B.Sc. CSIT including Textbooks </li>
+                    <li> Instant notification of B.Sc. CSIT notices </li>
+                    <li> Offline Downloads </li>
+                    <li> Internship and Job Search </li>
+                    <li> Tech News </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <p><a href="https://play.google.com/store/apps/details?id=io.github.ictsolved.csit" target="_blank"
+                        class="btn-style2 btn btn-primary">Download</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     window.onload = function () {
         setTimeout(function () {
             if (typeof (window.google_jobrunner) === "undefined") {
                 document.getElementById('viewer').innerHTML = `
-                    <section class="blog-area bg-color3">
-                        <div class="blog-wrapper section-spacing">
-                            <div class="container">
-                                <div class="error-page text-center">
-                                <p style="font-size:48px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
-                                    <p>Please disable your Adblock or whitelist our website to view this document.</p>
-                                    <p>Your support helps us to keep this website up and running.<br/>
-                                        After disabling the adblock, you can reload the page and continue to view the document.
-                                     </p>
-                                    <p><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" class="btn-style2 btn btn-primary">Reload</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                        `;
+                     <section class="blog-area bg-color3">
+                         <div class="blog-wrapper section-spacing">
+                             <div class="container">
+                                 <div class="error-page text-center">
+                                 <p style="font-size:48px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
+                                     <p>Please disable your Adblock or whitelist our website to view this document.</p>
+                                     <p>Your support helps us to keep this website up and running.<br/>
+                                         After disabling the adblock, you can reload the page and continue to view the document.
+                                      </p>
+                                     <p><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" class="btn-style2 btn btn-primary">Reload</a></p>
+                                 </div>
+                             </div>
+                         </div>
+                     </section>
+                         `;
             }
         }, 10000);
     };
