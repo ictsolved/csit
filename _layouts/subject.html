@@ -54,7 +54,7 @@ layout: default
                         <ul class="popular-article-list list-inline">
                             {% for item in resource.items %}
                             {% if item.hidden != true %}
-                            <li onclick="loadDocument('{{ item.id }}');">
+                            <li style="cursor:pointer" onclick="loadDocument('{{ item.id }}');">
                                 {{ item.title }}
                             </li>
                             {% endif %}
