@@ -1,4 +1,22 @@
 <script src="{{ site.url }}{{ site.baseurl }}/assets/js/build.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/smart-app-banner@2.0.0/dist/smart-app-banner.js"></script>
+<script type="text/javascript">
+    new SmartBanner({
+        daysHidden: 0,
+        daysReminder: 1,
+        appStoreLanguage: 'us',
+        title: 'CSIT Tutor',
+        author: 'Study Materials, Notices, Jobs',
+        button: 'VIEW',
+        store: {
+            android: 'GET IT ON Google Play'
+        },
+        price: {
+            android: 'FREE'
+        },
+        icon: '{{ site.url }}{{ site.baseurl }}/assets/images/favicons/android-chrome-192x192.png'
+    });
+</script>
 <script>
     $(function () {
         $('a[href*=\\#]').not(".no-smooth").on('click', function (event) {
