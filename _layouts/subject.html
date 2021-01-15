@@ -25,7 +25,7 @@ layout: default
             </div>
             <div id="viewer" class="row" style="display: none;">
                 <div class="col-md-12">
-                    <article class="bg-color1  wow fadeIn" data-wow-duration="3s">
+                    <article class="bg-color1 wow fadeIn">
                         <div style="width: 100%; position: relative">
                             <iframe id="document" width="100%" frameborder="0"
                                 sandbox="allow-scripts allow-same-origin"></iframe>
@@ -40,8 +40,8 @@ layout: default
             <div class="row">
                 <div class="col-md-6 col-lg-8">
                     {% for resource in page.resources %}
-                    <article class="pupolar-article  bg-color1  wow fadeIn" data-wow-duration="3s">
-                        <header class="popular-article-top">
+                    <article class="pupolar-article  bg-color1">
+                        <header class="popular-article-top wow bounceIn" data-wow-duration="1s">
                             <div class="popular-top-logo">
                                 <div class="popular-logo-icon"><img
                                         src="{{ site.url }}{{ site.baseurl }}/assets/images/book.png"
@@ -66,12 +66,13 @@ layout: default
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <article class="pupolar-item bg-color1 wow fadeIn" data-wow-duration="3s">
-                        <header class="popular-item-top">
-                            <div class="popular-top-logo">
+                    <article class="pupolar-item bg-color1">
+                        <header class="popular-item-top wow bounceIn" data-wow-duration="1s">
+                            <div class=" popular-top-logo">
                                 <div class="popular-logo-icon"><img
                                         src="{{ site.url }}{{ site.baseurl }}/assets/images/notes.png"
-                                        alt="service icon"></div>
+                                        alt="service icon">
+                                </div>
                             </div>
                             <div class="popular-top-title">
                                 <h5 class="heading-5">Other Subjects</a></h5>
@@ -117,8 +118,8 @@ layout: default
     };
     function loadDocument(doc) {
         document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
+        document.getElementById('document').height = window.innerHeight;
         document.getElementById('viewer').style = 'padding-bottom:30px';
-        document.getElementById('document').height = window.innerHeight - 60;
         document.getElementById('viewer').scrollIntoView();
     }
 </script>
