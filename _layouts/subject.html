@@ -23,10 +23,10 @@ layout: default
                 <h2 class="heading-2">{{ page.title }}</h2>
                 <p>{{ content }}</p>
             </div>
-            <div id="viewer" class="row" style="display: none;">
-                <div class="col-md-12">
+            <div id="viewer" style="display: none;">
+                <div class="col-xs-12">
                     <article class="bg-color1 wow fadeIn">
-                        <div style="width: 100%; position: relative">
+                        <div class="loader" style="width: 100%; position: relative">
                             <iframe id="document" width="100%" frameborder="0"
                                 sandbox="allow-scripts allow-same-origin"></iframe>
                             <div
@@ -98,27 +98,31 @@ layout: default
     window.onload = function () {
         setTimeout(function () {
             if (typeof (window.google_jobrunner) === "undefined") {
-                document.getElementById('container').innerHTML = `
+                document.getElementById('viewer').innerHTML = `
                     <section class="blog-area bg-color3">
                         <div class="blog-wrapper section-spacing">
                             <div class="container">
                                 <div class="error-page text-center">
-                                <p style="font-size:64px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
-                                    <p>It seems like you have AdBlock enabled.</p>
-                                    <p>We get it! Ads are annoying but they help keep this website up and running. <br/>
-                                    Please consider disabling your ad block software or whitelist our domain so only our ads are displayed.</p>
+                                <p style="font-size:48px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
+                                    <p>Please disable your Adblock or whitelist our website to view this document.</p>
+                                    <p>Your support helps us to keep this website up and running.<br/>
+                                        After disabling the adblock, you can reload the page and continue to view the document.
+                                     </p>
+                                    <p><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" class="btn-style2 btn btn-primary">Reload</a></p>
                                 </div>
                             </div>
                         </div>
                     </section>
                         `;
-                document.getElementById('container').scrollIntoView();
             }
         }, 10000);
     };
     function loadDocument(doc) {
-        document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
-        document.getElementById('document').height = window.innerHeight;
+        var iframe = document.getElementById('document');
+        if (iframe != null) {
+            document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
+            document.getElementById('document').height = window.innerHeight;
+        }
         document.getElementById('viewer').style = 'padding-bottom:30px';
         document.getElementById('viewer').scrollIntoView();
     }
