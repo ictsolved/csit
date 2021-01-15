@@ -25,7 +25,7 @@ layout: default
             </div>
             <div id="viewer" class="row" style="display: none;">
                 <div class="col-md-12">
-                    <article class="pupolar-article  bg-color1  wow fadeIn" data-wow-duration="3s">
+                    <article class="bg-color1  wow fadeIn" data-wow-duration="3s">
                         <div style="width: 100%; position: relative">
                             <iframe id="document" width="100%" frameborder="0"
                                 sandbox="allow-scripts allow-same-origin"></iframe>
@@ -117,7 +117,7 @@ layout: default
     };
     function loadDocument(doc) {
         document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
-        document.getElementById('viewer').style = '';
+        document.getElementById('viewer').style = 'padding-bottom:30px';
         document.getElementById('document').height = window.innerHeight - 60;
         document.getElementById('viewer').scrollIntoView();
     }
