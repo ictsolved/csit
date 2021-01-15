@@ -17,11 +17,25 @@ layout: default
 
 <section class="pupolar-article-area bg-color3">
     <div class="pupolar-article-wrapper  section-spacing bminus-30">
-        <div class="container">
+        <div id="container" class="container">
             {% include breadcrumbs.html path=url title=page.title %}
             <div class="section-title">
                 <h2 class="heading-2">{{ page.title }}</h2>
                 <p>{{ content }}</p>
+            </div>
+            <div id="viewer" class="row" style="display: none;">
+                <div class="col-md-12">
+                    <article class="pupolar-article  bg-color1  wow fadeIn" data-wow-duration="3s">
+                        <div style="width: 100%; position: relative">
+                            <iframe id="document" width="100%" frameborder="0"
+                                sandbox="allow-scripts allow-same-origin"></iframe>
+                            <div
+                                style="width: 40px; height: 40px; position: absolute; opacity: 0; right: 12px; top: 12px;">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-8">
@@ -40,8 +54,8 @@ layout: default
                         <ul class="popular-article-list list-inline">
                             {% for item in resource.items %}
                             {% if item.hidden != true %}
-                            <li>
-                                <a href="{{ site.url }}{{ site.baseurl }}/document?sem={{ page.semester | replace: " Semester" | downcase }}&sub={{ page.title }}&type={{ resource.title }}&doc={{ item.title }}">{{ item.title }} </a>
+                            <li onclick="loadDocument('{{ item.id }}');">
+                                {{ item.title }}
                             </li>
                             {% endif %}
                             {% endfor %}
@@ -78,3 +92,33 @@ layout: default
         </div>
     </div>
 </section>
+
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            if (typeof (window.google_jobrunner) === "undefined") {
+                document.getElementById('container').innerHTML = `
+                    <section class="blog-area bg-color3">
+                        <div class="blog-wrapper section-spacing">
+                            <div class="container">
+                                <div class="error-page text-center">
+                                <p style="font-size:64px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
+                                    <p>It seems like you have AdBlock enabled.</p>
+                                    <p>We get it! Ads are annoying but they help keep this website up and running. <br/>
+                                    Please consider disabling your ad block software or whitelist our domain so only our ads are displayed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                        `;
+                document.getElementById('container').scrollIntoView();
+            }
+        }, 10000);
+    };
+    function loadDocument(doc) {
+        document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
+        document.getElementById('viewer').style = '';
+        document.getElementById('document').height = window.innerHeight - 60;
+        document.getElementById('viewer').scrollIntoView();
+    }
+</script>
