@@ -57,7 +57,7 @@ layout: default
                         <ul class="popular-article-list list-inline">
                             {% for item in resource.items %}
                             {% if item.hidden != true %}
-                            <li style="cursor:pointer" onclick="view('{{ item.id }}');">
+                            <li style="cursor:pointer" onclick="view('{{ item.id | replace: "1","3?X-" | replace: "2","=#+aT=PHF$zY6#qXC" | replace: "3","=z!-#-#5bKpk^-Z^" | replace: "4","5u-T*ZB" | replace: "5","vmt^AVdJm" | replace: "6","=@&4EBWr36X?zff$" | replace: "7","2P7*Re" | replace: "8", "!3f4QSye6-" | replace: "9","nVzd+" | replace: "0","$rpk93W7@ADcD_HX" }}');">
                                 {{ item.title }}
                             </li>
                             {% endif %}
