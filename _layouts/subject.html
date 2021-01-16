@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% assign url = page.path | replace: "/subjects","" %}
+<script src="{{ site.url }}{{ site.baseurl }}/assets/js/script.js"></script>
 
 <section class="page-title-area bg-cover1">
     <div class="page-title-wrapper section-spacing">
@@ -56,7 +57,7 @@ layout: default
                         <ul class="popular-article-list list-inline">
                             {% for item in resource.items %}
                             {% if item.hidden != true %}
-                            <li style="cursor:pointer" onclick="loadDocument('{{ item.id }}');">
+                            <li style="cursor:pointer" onclick="view('{{ item.id }}');">
                                 {{ item.title }}
                             </li>
                             {% endif %}
@@ -124,37 +125,3 @@ layout: default
         </div>
     </div>
 </div>
-
-<script>
-    window.onload = function () {
-        setTimeout(function () {
-            if (typeof (window.google_jobrunner) === "undefined") {
-                document.getElementById('viewer').innerHTML = `
-                     <section class="blog-area bg-color3">
-                         <div class="blog-wrapper section-spacing">
-                             <div class="container">
-                                 <div class="error-page text-center">
-                                 <p style="font-size:48px;color:red;"><i class="fa fa-exclamation-circle"></i></p>
-                                     <p>Please disable your Adblock or whitelist our website to view this document.</p>
-                                     <p>Your support helps us to keep this website up and running.<br/>
-                                         After disabling the adblock, you can reload the page and continue to view the document.
-                                      </p>
-                                     <p><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" class="btn-style2 btn btn-primary">Reload</a></p>
-                                 </div>
-                             </div>
-                         </div>
-                     </section>
-                         `;
-            }
-        }, 10000);
-    };
-    function loadDocument(doc) {
-        var iframe = document.getElementById('document');
-        if (iframe != null) {
-            document.getElementById('document').src = 'https://drive.google.com/file/d/' + doc + '/preview';
-            document.getElementById('document').height = window.innerHeight;
-        }
-        document.getElementById('viewer').style = 'padding-bottom:30px';
-        document.getElementById('viewer').scrollIntoView();
-    }
-</script>
