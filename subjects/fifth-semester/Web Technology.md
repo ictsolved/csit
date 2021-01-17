@@ -37,5 +37,20 @@ resources:
         id: 10aPsvfazZj-Cubkdn01vxJ1q-q7W2Ygc
       - title: "Web Technology Old Question 2076"
         id: 1h7EpEnWh-sSnKR3J1DZAoLe4uz3z2pju
+
+  - title: 'Old Question Solutions'
+    items:
+      - title: "Web Technology Old Question Solution 2068"
+        id: 1UwEag2sv5zk2HbNqmJ8QPybVFE1JOq49
+      - title: "Web Technology Old Question Solution 2068 II"
+        id: 1ssskVtMPZ_MZeo1wDGTG1lj5LF_Ve1vw
+      - title: "Web Technology Old Question Solution 2069"
+        id: 1x_vgyyCkQukGyTZWNYbiyCFOjn05eX8b
+      - title: "Web Technology Old Question Solution 2071"
+        id: 1d5aMbTxzZ120KmoOQ1V1wRnP9fqd4KtI
+      - title: "Web Technology Old Question Solution 2071 II"
+        id: 1DxVtUYQRAfGRF-Db1oSCyCZxXrZRqyVT
+      - title: "Web Technology Old Question Solution 2072"
+        id: 1sQXRoG0-7-1Ufg5sJzXc6TA_sBycyNJo
 ---
 {{page.description}}
