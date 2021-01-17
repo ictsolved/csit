@@ -40,6 +40,8 @@ resources:
 
   - title: 'Old Question Solutions'
     items:
+      - title: "Web Technology Model Question Solution"
+        id: 19mCKbGNNeh_XF5Cq-FD7G1PPbq1rquqY
       - title: "Web Technology Old Question Solution 2068"
         id: 1UwEag2sv5zk2HbNqmJ8QPybVFE1JOq49
       - title: "Web Technology Old Question Solution 2068 II"
