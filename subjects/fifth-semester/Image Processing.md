@@ -20,6 +20,25 @@ resources:
     items:
       - title: "Image Processing Note"
         id: "18UxRtVBhgN-wlfmAoi6-oOM432gsiWcR"
+      - title: "Image Processing Note by RKD Sir"
+        id: "19YmkbSkHFFvLQPo3qY6TOTcCYhW-RWg-"
+      - title: "Image Processing Reference Note"
+        id: "1IDtOh3_sPXCT0BvYn0UmwhHxfxqvdzTR"
+  
+  - title: 'Old Questions'
+    items:
+      - title: "Image Processing Model Question"
+        id: "1eYCU75muhuFmO4VAsN39CUmMArCC7mHC"
+      - title: "Image Processing Old Question 2068"
+        id: "13A3z_r0iwysSWYSjs_y9Wq45Zj1HiBIp"
+      - title: "Image Processing Old Question 2071"
+        id: "1-WSwHKkFL12adQ54x5OSU5kvQ7NyzgYD"
+      - title: "Image Processing Old Question 2073"
+        id: "1_BUSMeEbynIzkoJK3PR4yXvWnlSgtaGe"
+      - title: "Image Processing Old Question 2074"
+        id: "13Qj_NiUwQm5WlOU6OWSFPli44tbz30ux"
+      - title: "Image Processing Old Question 2075"
+        id: "1drsgMeo6V8gYLxvbLkzPEFPsxQZin4tl"
 ---
 {{page.description}}
 The objective of this course is to make students able to:
