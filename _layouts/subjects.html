@@ -40,6 +40,28 @@ layout: default
                 </div>
                 {% endfor %}
             </div>
+            {% if page.electives %}
+            <h3 class="heading-3">Electives</h3>
+            <div class="row">
+                {% for elective in page.electives %}
+                <div class="col-md-6">
+                    <a href="{{ site.url }}{{ site.baseurl }}/{{ elective.url }}">
+                        <article class="faq-service bg-color1">
+                            <header class="faq-logo wow bounceIn" data-wow-duration="1s">
+                                <div class="logo-image"> <img
+                                        src="{{ site.url }}{{ site.baseurl }}/assets/images/notes.png"
+                                        alt="{{ post.title }}" /></div>
+                            </header>
+                            <footer class="faq-content">
+                                <h4 class="heading-4">{{ elective.title }}</h4>
+                                <p>{{ elective.description | truncate: 85 }}</p>
+                            </footer>
+                        </article>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
     </div>
 </section>

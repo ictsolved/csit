@@ -57,9 +57,14 @@ layout: default
                         <ul class="popular-article-list list-inline">
                             {% for item in resource.items %}
                             {% if item.hidden != true %}
+                            {% if item.id %}
                             <li style="cursor:pointer" onclick="view('{{ item.id | replace: "1","e=:E+" | replace: "2","DtYAeyfORlWvWYTu" | replace: "3","ZMXdbXBNweNYiDhA" | replace: "4","zUvLVGpktZaKkNWF" | replace: "5","ZqcaZumgXBvcpaGD" | replace: "6","SFdkdEoHvjogHoMe" | replace: "7","RvLivDpbPRFcTgAc" | replace: "8", "vcrXRlvYApwVttVD" | replace: "9","kIXNCeLoyMxHDIgO" | replace: "0","SKrtxNrkQSLbmYmz" }}');">
                                 {{ item.title }}
                             </li>
+                            {% endif %}
+                            {% if item.browseUrl %}
+		                    <li><a href="{{ item.browseUrl }}" target="_blank" rel="nofollow">{{ item.title }}</a></li>
+		                    {% endif %}
                             {% endif %}
                             {% endfor %}
                         </ul>
