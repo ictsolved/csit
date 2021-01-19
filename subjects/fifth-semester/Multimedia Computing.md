@@ -13,6 +13,8 @@ resources:
         id: 1thBayAA7VSOHztnOzDEjiUaUW0-5OGCE
   - title: 'Notes'
     items:
+      - title: "Multimedia Computing Handwritten Note"
+        id: "1Pe46Pqg2lmZCTE6XlBomTxsNm4GOTrx0"
       - title: "Multimedia Computing Note"
         id: "1qmwoUWZYlihXJAAKu367AVovbKQol1qO"
 ---
