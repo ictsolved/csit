@@ -5,7 +5,7 @@ plugins: [jekyll-sitemap]
 title: "CSIT Tutor"
 description: "CSIT Tutor is a web and mobile application which provides complete set of reference materials such as notes, past question papers, syllabus and more for B.Sc. CSIT students."
 baseurl: "/csit"
-url: "https://csit.ictsolved.com"
+url: "https://ictsolved.com"
 
 # Build settings
 markdown: kramdown
