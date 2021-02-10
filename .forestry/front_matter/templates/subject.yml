@@ -5,9 +5,8 @@ fields:
 - type: text
   name: layout
   label: layout
-- type: text
-  name: subjectCode
-  label: subjectCode
+  default: subject
+  hidden: true
 - type: text
   name: title
   label: title
@@ -17,6 +16,9 @@ fields:
 - type: text
   name: permalink
   label: permalink
+- type: text
+  name: subjectCode
+  label: subjectCode
 - type: textarea
   name: description
   label: description
