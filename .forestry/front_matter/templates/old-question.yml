@@ -43,7 +43,7 @@ fields:
       file: 
       path: 
   label: Course Year
-- name: Subject
+- name: subject
   type: select
   default: C Programming
   config:
