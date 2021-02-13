@@ -1,0 +1,54 @@
+---
+label: Old Question
+hide_body: true
+fields:
+- type: text
+  name: robots
+  label: robots
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: courseYear
+  label: courseYear
+- type: text
+  name: semester
+  label: semester
+- type: text
+  name: subject
+  label: subject
+- type: text
+  name: subjectCode
+  label: subjectCode
+- type: number
+  name: questionYear
+  label: questionYear
+- type: text
+  name: permalink
+  label: permalink
+- type: field_group_list
+  name: questions
+  label: questions
+  fields:
+  - type: text
+    name: heading
+    label: heading
+  - type: text
+    name: marks
+    label: marks
+  - type: field_group_list
+    name: contents
+    label: contents
+    fields:
+    - type: text
+      name: question
+      label: question
+    - type: text
+      name: marks
+      label: marks
+    - type: text
+      name: answer
+      label: answer
