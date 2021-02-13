@@ -1,6 +1,6 @@
 ---
 label: Old Question
-hide_body: true
+hide_body: false
 fields:
 - type: text
   name: layout
@@ -187,8 +187,7 @@ fields:
     required: true
   description: "/first-semester/c-programming/old-question/2077"
 - type: field_group_list
-  name: questions
-  label: Questions
+  name: resources
   fields:
   - type: text
     name: instruction
@@ -214,12 +213,12 @@ fields:
   - type: text
     name: marks
     label: Marks
-    description: "(1+2+2)"
+    description: "(2x10=20)"
     config:
       required: false
   - type: field_group_list
-    name: contents
-    label: Contents
+    name: items
+    label: Items
     fields:
     - name: question
       type: textarea
@@ -235,6 +234,7 @@ fields:
       label: Marks
       config:
         required: false
+      description: "(1+2+2)"
     - name: answer
       type: textarea
       default: ''
@@ -244,3 +244,4 @@ fields:
         schema:
           format: markdown
       label: Answer
+  label: Resources
