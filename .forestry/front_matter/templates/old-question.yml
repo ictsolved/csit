@@ -33,6 +33,60 @@ fields:
       file: 
       path: 
   label: Semester
+- name: Subject
+  type: select
+  default: C Programming
+  config:
+    required: true
+    options:
+    - Advanced Database
+    - Advanced Java Programming
+    - Artificial Intelligence
+    - C Programming
+    - Compiler Design and Construction
+    - Computer Architecture
+    - Computer Graphics
+    - Computer Networks
+    - Cryptography
+    - Data Structure and Algorithms
+    - Data Warehousing and Data Mining
+    - Database Management System
+    - Design and Analysis of Algorithms
+    - Digital Logic
+    - Discrete Structure
+    - E-Governance
+    - Image Processing
+    - Internship
+    - Introduction to Information Technology
+    - Knowledge Management
+    - Mathematics I
+    - Mathematics II
+    - Microprocessor Based Design
+    - Microprocessor
+    - Multimedia Computing
+    - NET Centric Computing
+    - Numerical Method
+    - Object Oriented Programming
+    - Operating Systems
+    - Physics
+    - Principles of Management
+    - Project Work
+    - Simulation and Modeling
+    - Society and Ethics in IT
+    - Software Engineering
+    - Statistics I
+    - Statistics II
+    - System Analysis and Design
+    - Technical Writing
+    - Theory of Computation
+    - Web Technology
+    - Wireless Networking
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Subject
 - name: courseYear
   type: select
   default: First
