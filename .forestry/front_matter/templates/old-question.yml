@@ -33,6 +33,22 @@ fields:
       file: 
       path: 
   label: Semester
+- name: courseYear
+  type: select
+  default: First
+  config:
+    required: true
+    options:
+    - First
+    - Second
+    - Third
+    - Fourth
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Course Year
 - name: Subject
   type: select
   default: C Programming
@@ -87,22 +103,6 @@ fields:
       file: 
       path: 
   label: Subject
-- name: courseYear
-  type: select
-  default: First
-  config:
-    required: true
-    options:
-    - First
-    - Second
-    - Third
-    - Fourth
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Course Year
 - type: text
   name: subjectCode
   label: subjectCode
