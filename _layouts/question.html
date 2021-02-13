@@ -1,0 +1,108 @@
+---
+layout: default
+---
+
+<section class="page-title-area bg-cover1">
+    <div class="page-title-wrapper section-spacing">
+        <div class="page-title text-center white-text">
+            <h2 class="heading-2">{{ page.title }}</h2>
+            <ul class="page-title-meta list-inline">
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="page-area bg-color1">
+    <div class="page-wrapper section-spacing">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-content-box">
+                        <div style="text-align: center; font-weight: bold;" class="mb-2">
+                            <div>
+                                Tribuvan University
+                            </div>
+                            <div>
+                                Institute of Science and Technology
+                            </div>
+                            <div>
+                                {{page.questionYear}}
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-8">
+                                <p class="mb-0">
+                                    Bachelor Level/ {{page.year}} Year/ {{page.semester}} Semester/ Science</p>
+                                <p class="mb-0">
+                                    <b> Science and Information Technology ({{page.subjectCode}}) </b>
+                                </p>
+                                <p class="mb-0">
+                                    ({{page.subject}})
+                                </p>
+                            </div>
+                            <div class="col-4" style="text-align: right;">
+                                <p class="mb-0">
+                                    Full Marks: 60
+                                </p>
+                                <p class="mb-0">
+                                    Pass Marks: 24
+                                </p>
+                                <p class="mb-0">
+                                    Time: 3 hours
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mb-0">
+                            Candidates are required to give their answers in their own words as for as practicable.
+                        </p>
+                        <p>The figures in the margin indicate full marks.</p>
+                        {% for type in page.questions %}
+                        {% assign parentLoop = forloop %}
+                        <div class="row">
+                            <div class="col-8">
+                                <b>{{ type.heading }}</b>
+                            </div>
+                            <div class="col-4" style="text-align: right;">
+                                ({{ type.marks }})
+                            </div>
+                        </div>
+                        <ol>
+                            {% for content in type.contents %}
+                            <li>
+                                <div class="accordion faq-accordion mb-3" id="accordion{{parentLoop.index}}{{forloop.index}}">
+                                    <div class="card">
+                                        <div class="card" id="heading{{parentLoop.index}}{{forloop.index}}">
+                                            <!-- <h5 class="mb-0"> -->
+                                            <button style="text-align: left; color: black;" class="btn btn-link" type="button" data-toggle="collapse"
+                                                data-target="#collapse{{parentLoop.index}}{{forloop.index}}" aria-expanded="true">
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                        {{ content.question }}
+                                                    </div>
+                                                    <div class="col-4" style="text-align: right;">
+                                                        ({{ content.marks }})
+                                                    </div>
+                                                </div>
+
+                                            </button>
+                                            <!-- </h5> -->
+                                        </div>
+                                        <div id="collapse{{parentLoop.index}}{{forloop.index}}" class="collapse"
+                                            aria-labelledby="heading{{parentLoop.index}}{{forloop.index}}"
+                                            data-parent="#accordion{{parentLoop.index}}{{forloop.index}}">
+                                            <div class="card-body">
+                                                <b>Answer:</b> {{ content.answer }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
