@@ -246,3 +246,20 @@ fields:
           format: markdown
       label: Answer
   label: Resources
+- name: we
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: we
+- name: www
+  type: field_group
+  config: {}
+  fields:
+  - name: nn
+    type: text
+    config:
+      required: false
+    label: nn
+  label: www
