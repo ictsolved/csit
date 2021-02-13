@@ -228,7 +228,7 @@ fields:
         required: true
         wysiwyg: true
         schema:
-          format: html-blocks
+          format: html
       label: Question
     - type: text
       name: marks
