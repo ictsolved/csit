@@ -11,18 +11,16 @@ resources:
   questionType: Long Question
   marks: 2x10=20
   items:
-  - question: |-
-      Explain the major functions of a digital computers.
-
-      ![](https://jekyll-doxy.netlify.app/assets/images/service-icon2.png)
+  - question: <p>Explain the major functions of a digital computers. <img src="https://jekyll-doxy.netlify.app/assets/images/service-icon2.png"></p>
+    marks: "5"
+    answer: ''
+  - question: "<p>Differentiate between high level language and low level language.</p>"
+    marks: "6"
+    answer: ''
+  - question: "<p>What are the components of a data ware house?</p>"
     marks: ''
     answer: ''
-  - question: iok
-    marks: ''
-    answer: ''
-  - question: What are the components of a data ware house?
-    marks: ''
-    answer: ''
+subject: Advanced Database
 published: false
 
 ---
