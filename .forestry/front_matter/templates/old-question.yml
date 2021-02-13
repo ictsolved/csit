@@ -103,12 +103,89 @@ fields:
       file: 
       path: 
   label: Subject
-- type: text
-  name: subjectCode
-  label: subjectCode
-- type: number
-  name: questionYear
-  label: questionYear
+- name: subjectCode
+  type: select
+  default: CSC461
+  config:
+    required: true
+    options:
+    - CSC461
+    - CSC409
+    - CSC261
+    - CSC110
+    - CSC365
+    - CSC208
+    - CSC209
+    - CSC258
+    - CSC316
+    - CSC206
+    - CSC410
+    - CSC260
+    - CSC314
+    - CSC111
+    - CSC160
+    - CSC366
+    - CSC321
+    - CSC462
+    - CSC109
+    - CSC322
+    - MTH112
+    - MTH163
+    - CSC324
+    - CSC162
+    - CSC319
+    - CSC367
+    - CSC207
+    - CSC161
+    - CSC259
+    - PHY113
+    - MGT411
+    - CSC412
+    - CSC317
+    - CSC323
+    - CSC364
+    - STA164
+    - STA210
+    - CSC315
+    - CSC368
+    - CSC461
+    - CSC257
+    - CSC318
+    - CSC320
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Subject Code
+- name: questionYear
+  type: select
+  default: 2076
+  config:
+    required: true
+    options:
+    - 2065
+    - 2066
+    - 2067
+    - 2068
+    - 2069
+    - 2070
+    - 2071
+    - 2072
+    - 2073
+    - 2074
+    - 2075
+    - 2076
+    - 2077
+    - 2078
+    - 2079
+    - 2080
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Question Paper Year
 - type: text
   name: permalink
   label: permalink
