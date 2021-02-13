@@ -7,12 +7,6 @@ fields:
   label: layout
   default: question
   hidden: true
-- type: text
-  name: title
-  label: Web Page Title
-  description: C Programming Old Question 2075
-  config:
-    required: true
 - name: semester
   type: select
   default: First
@@ -188,30 +182,65 @@ fields:
   label: Question Paper Year
 - type: text
   name: permalink
-  label: URL (Permalink)
+  label: Route (Permalink)
   config:
     required: true
   description: "/first-semester/c-programming/old-question/2077"
 - type: field_group_list
   name: questions
-  label: questions
+  label: Questions
   fields:
   - type: text
-    name: heading
-    label: heading
+    name: instruction
+    label: Instruction
+    description: Attempt any two questions.
+    config:
+      required: true
+  - name: questionType
+    type: select
+    default: []
+    config:
+      required: true
+      options:
+      - Long Question
+      - Short Question
+      - Short Notes
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Question Type
   - type: text
     name: marks
-    label: marks
+    label: Marks
+    description: "(1+2+2)"
+    config:
+      required: false
   - type: field_group_list
     name: contents
-    label: contents
+    label: Contents
     fields:
-    - type: text
-      name: question
-      label: question
+    - name: question
+      type: textarea
+      default: ''
+      config:
+        required: true
+        wysiwyg: true
+        schema:
+          format: markdown
+      label: Question
     - type: text
       name: marks
-      label: marks
-    - type: text
-      name: answer
-      label: answer
+      label: Marks
+      config:
+        required: false
+    - name: answer
+      type: textarea
+      default: ''
+      config:
+        required: false
+        wysiwyg: true
+        schema:
+          format: markdown
+      label: Answer
