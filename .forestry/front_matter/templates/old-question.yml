@@ -185,7 +185,8 @@ fields:
   label: Route (Permalink)
   config:
     required: true
-  description: "/first-semester/c-programming/old-question/2077"
+  description: "/old-question/iit65/"
+  default: "/old-question/iit65/"
 - type: field_group_list
   name: resources
   fields:
