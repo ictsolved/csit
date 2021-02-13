@@ -1,5 +1,6 @@
 ---
 robots: noindex
+sitemap: false
 layout: question
 title: Advanced Database Old Question 2075
 courseYear: Fourth
