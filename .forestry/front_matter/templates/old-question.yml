@@ -3,23 +3,52 @@ label: Old Question
 hide_body: true
 fields:
 - type: text
-  name: robots
-  label: robots
-- type: text
   name: layout
   label: layout
+  default: question
+  hidden: true
 - type: text
   name: title
-  label: title
-- type: text
-  name: courseYear
-  label: courseYear
-- type: text
-  name: semester
-  label: semester
-- type: text
-  name: subject
-  label: subject
+  label: Web Page Title
+  description: C Programming Old Question 2075
+  config:
+    required: true
+- name: semester
+  type: select
+  default: First
+  config:
+    required: true
+    options:
+    - First
+    - Second
+    - Third
+    - Fourth
+    - Fifth
+    - Sixth
+    - Seventh
+    - Eighth
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Semester
+- name: courseYear
+  type: select
+  default: First
+  config:
+    required: true
+    options:
+    - First
+    - Second
+    - Third
+    - Fourth
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Course Year
 - type: text
   name: subjectCode
   label: subjectCode
