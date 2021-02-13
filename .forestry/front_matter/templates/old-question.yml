@@ -214,7 +214,7 @@ fields:
   - type: text
     name: marks
     label: Marks
-    description: "(2x10=20)"
+    description: 2x10=20
     config:
       required: false
   - type: field_group_list
@@ -235,7 +235,7 @@ fields:
       label: Marks
       config:
         required: false
-      description: "(1+2+2)"
+      description: 1+2+2
     - name: answer
       type: textarea
       default: ''
