@@ -12,7 +12,7 @@ resources:
   - title: 'Syllabus'
     items:
       - title: "Theory of Computation Syllabus"
-        id: 1Zvw41Na9oOm2pgydzWqL8FQRozMGf8uX
+        id: 1tNhAz9vde60kQLHKb5zU69lldb7rsQ9I
   
   - title: 'Old Questions'
     items:
