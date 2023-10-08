@@ -1,0 +1,89 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.popup .popupIn {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.popup .popupIn .frameSide,
+.popup .popupIn .frameSide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  opacity: 1;
+  background-color: #343434;
+  left: 12px;
+  top: 12px;
+  position: absolute;
+  color: #fff;
+  z-index: 99;
+}
+
+.close i {
+  position: absolute;
+  margin: auto;
+  display: block;
+  bottom: 0px;
+  top: 0px;
+  left: 50%;
+  height: 28px;
+  transform: translate(-50%, 0);
+}
+
+.document-title {
+  cursor: pointer;
+}
+
+.document-title:hover {
+  color: #f44336;
+}
+
+table {
+  border-collapse: collapse;
+  border-color: #e7e5e4;
+  text-indent: 0;
+  font-size: .875em;
+  line-height: 1.7;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  table-layout: auto;
+  text-align: left;
+  width: 100%;
+}
+
+table thead {
+  border-bottom-width: 1px;
+}
+
+table thead tr th {
+  padding: 16px 8px;
+}
+
+tbody tr {
+  border-bottom: 1px solid;
+}
+
+table tbody tr td {
+  padding: 16px 8px;
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0px;
+}
